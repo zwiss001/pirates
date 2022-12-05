@@ -47,12 +47,13 @@ class Beach_with_ship (location.SubLocation):
             config.the_player.next_loc = config.the_player.ship
             config.the_player.visiting = False
         elif (verb == "north"):
-            config.the_player.next_loc = self.main_location.locations["trees"]
-        elif (verb == "east" or verb == "west"):
+            config.the_player.next_loc = self.main_location.locations["lollypop trees"]
+        elif (verb == "east"):
             announce ("You walk all the way around the island on the beach. It's not very interesting.")
+        elif (verb == "west"):
 
 
-class Trees (location.SubLocation):
+class LollypopTrees (location.SubLocation):
     def __init__ (self, m):
         super().__init__(m)
         self.name = "trees"
