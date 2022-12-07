@@ -5,6 +5,7 @@ from game.display import announce
 from game.events import *
 from game.items import Cutlass
 from game.items import Flintlock
+from game.items import MarshmellowGun
 
 class Island (location.Location):
 
