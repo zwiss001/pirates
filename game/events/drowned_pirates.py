@@ -17,7 +17,7 @@ class DrownedPirates (event.Event):
         uplim = 6
         if random.randrange(2) == 0:
             min = 1
-            uplim = 5
+            uplim = 3
             monsters.append(Drowned("Pirate captain"))
             monsters[0].speed = 1.2*monsters[0].speed
             monsters[0].health = 2*monsters[0].health

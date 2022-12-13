@@ -129,3 +129,19 @@ class Drowned(Monster):
         #7 to 19 hp, bite attack, 65 to 85 speed (100 is "normal")
         super().__init__(name, random.randrange(7,20), attacks, 75 + random.randrange(-10,11))
 
+class Davyjones(Monster):
+     def __init__ (self, name):
+        attacks = {}
+        attacks["strangle"] = ["strangles",random.randrange(75,85), (10,15)]
+        attacks["smack"] = ["whallops",random.randrange(75,85), (20,30)]
+        attacks["stab"] = ["punctures",random.randrange(75,85), (30,40)]
+        super().__init__(name, random.randrange(15,30), attacks, 85 + random.randrange(-10,11))
+
+
+#class Gummybear(Monster):
+ #    def __init__ (self, name):
+  #      attacks = {}
+   #     attacks["gummify"] = ["gummifies",random.randrange(0,1), (95,100)]
+    #    super().__init__(name, random.randrange(50,75), attacks, 5)
+
+        

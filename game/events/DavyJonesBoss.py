@@ -1,8 +1,10 @@
 from game import event
 import random
 from game.combat import Combat
-from game.combat import Drowned
+from game.combat import Davyjones
 from game.display import announce
+from game.ship import *
+from game import config
 
 class DavyJones (event.Event):
 
@@ -11,22 +13,14 @@ class DavyJones (event.Event):
 
     def process (self, world):
         result = {}
-        result["message"] = "Davy Jones has been defeated! He left a note!"
+        
         monsters = []
-        min = 2
-        uplim = 6
-        if random.randrange(2) == 0:
-            min = 1
-            uplim = 5
-            monsters.append(Drowned("Pirate captain"))
-            monsters[0].speed = 1.2*monsters[0].speed
-            monsters[0].health = 2*monsters[0].health
-        n_appearing = random.randrange(min, uplim)
-        n = 1
-        while n <= n_appearing:
-            monsters.append(Drowned("Drowned pirate "+str(n)))
-            n += 1
-        announce ("You are attacked by a crew of drowned pirates!")
+        monsters.append(Davyjones("Davy Jones"))
+        monsters[0].speed = 4*monsters[0].speed
+        monsters[0].health = 25*monsters[0].health
+        announce ("You are attacked by the Great Davy Jones")
         Combat(monsters).combat()
+        result["message"] = "Davy Jones has been defeated! He left a note!"
+        announce("The note says the coordinates of the homeport:"+ str(config.the_player.world.homex)+", "+str(config.the_player.world.homey))
         result["newevents"] = [ self ]
         return result

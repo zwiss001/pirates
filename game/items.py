@@ -42,17 +42,25 @@ class Lightsaber(Item):
     def __init__(self):
         super().__init__("lightsaber", 750)
         self.damage = (25,100)
-        self.skill = "saber"
+        self.skill = "swords"
         self.verb = "stab"
         self.verb2 = "severs"
 
 class MarshmellowGun(Item):
     def __init__(self):
-        super().__init__("marshmellow gun") #Note: price is in shillings (a silver coin, 20 per pound)
-        self.damage = (100,100)
+        super().__init__("marshmellow gun",1000) #Note: price is in shillings (a silver coin, 20 per pound)
+        self.damage = (100,101)
         self.firearm = True
         self.charge = True
-        self.skill = "shooter"
+        self.skill = "guns"
         self.verb = "pew"
         self.verb2 = "mellows"
+
+class CactuSword(Item):
+    def __init__(self):
+        super().__init__("Cactusword", 5) #Note: price is in shillings (a silver coin, 20 per pound)
+        self.damage = (25,60)
+        self.skill = "swords"
+        self.verb = "poke"
+        self.verb2 = "spines"
         
